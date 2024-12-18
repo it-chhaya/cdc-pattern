@@ -39,8 +39,8 @@ services:
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: broker:29092
 
   kafka-connect:
-    image: kafka-connect-spooldir
-    #image: confluentinc/cp-kafka-connect-base:5.5.0
+    build: .
+    image: kafka-connect-custom
     container_name: kafka-connect
     depends_on:
       - zookeeper
